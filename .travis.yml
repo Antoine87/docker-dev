@@ -1,0 +1,16 @@
+services:
+  - docker
+
+before_script:
+  - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+
+script:
+  - docker build --tag $DOCKER_USERNAME/dev .
+  - docker run --rm --interactive --tty $DOCKER_USERNAME/dev /bin/sh -c "composer diagnose"
+
+deploy:
+  provider: script
+  script: docker push $DOCKER_USERNAME/dev
+
+notifications:
+  email: false
