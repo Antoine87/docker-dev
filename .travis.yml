@@ -11,6 +11,8 @@ script:
 deploy:
   provider: script
   script: docker push $DOCKER_USERNAME/dev
+  on:
+    branch: master
 
 notifications:
   email: false

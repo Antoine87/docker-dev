@@ -1,5 +1,7 @@
 # Docker Alpine/PHP/CLI/Composer development image
 
+[![Build Status](https://travis-ci.org/Antoine87/docker-dev.svg?branch=master)](https://travis-ci.org/Antoine87/docker-dev)
+
 Pull and run the image :
 
 ```shell
@@ -17,4 +19,4 @@ Press Ctrl-C to quit.
 ```
 
 By default `entrypoint` listens on port `8000` to the `/srv/web/public` directory.
- 
+
